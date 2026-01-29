@@ -1,57 +1,50 @@
 import React from "react";
-import REACTDOM from "react-dom/client";
+import ReactDOM from "react-dom/client";
 import "./index.css";
 
-// REACT ELEMENT IS A JS OBJECT
-// PROPS -> children + attributes
-// jiski koi id nhi hai vha empty obj aayega 
+// JSX - it isn't HTML in JS, it's html like or xml like syntax
+// jsx isn't a part of react
+// the same above example created using jsx
+// jsx (transpiled before it reaches the js engine)
+// JSX => Babel transpiles it to React.createElement => ReactElement => JS Object => HTMLElement(render)
 
-const heading = React.createElement(
-  "h1",
-  {id: 'heading', xyz: 'abc' as string},
-  "hello world from react!"
+const jsxHeading = (
+<h1 className="head" tabIndex={1}>
+  Namaste react using jsx
+  </h1>
 );
 
-console.log(heading);
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+root.render(jsxHeading);
 
-const root = REACTDOM.createRoot(document.getElementById('root') as HTMLElement);
+// React components :
+// class based components --> old way of writing code
+// functional components --> new way 
 
-root.render(heading);
+// React Functional Component -> normal js fn that returns some piece of jsx code/ React element
+// both the headingComponent's syntaxes are same !!
 
+const Title = () => (
+  <h1 className="head" tabIndex={1}>
+  Shreya Chopra 
+  </h1>
+);
 
-/* how to create these nested elements in react ?
-  <div id="parent">
-      <div id="child1">
-        <h1>i am h1 tag</h1>
-        <h2>i am h2 tag</h2>
-      </div> 
-      <div id="child2">
-        <h1>i am h1 tag</h1>
-        <h2>i am h2 tag</h2>
-      </div> 
+const number = 1000;
+  
+// this is component composition -> jab ek component ke andar doosra component ho
+// hum koi bhi js code ko bs ek curly braces ke andar agr jsx mei daale tb bhi vo execute ho jayega ! 
+const HeadingComponent = () => (
+  <div id="container">
+  <Title />
+  <h2>{number}</h2>
+  <h1 className="heading">namaste react functional component</h1>
   </div>
+); 
 
-*/
+// const HeadingComponent2 = () => {
+//   return <h1 className="heading">namaste react functional component</h1>
+// };
 
-// nested html structure in raect
-// ReactElement(object) => HTML  (Browser understands)
-// agr 1 se zda sibling bnaana hai toh wrap everything up in an array
-
-
-const parent = React.createElement("div", {id: 'parent' as string}, [
-  React.createElement("div", {id: 'child1' as string}, 
-    [
-       React.createElement("h1", {id: 'heading' as string}, "i am an h1 tag"),
-       React.createElement("h2", {id: 'heading' as string}, "i am an h2 tag")
-    ]),
-    React.createElement("div", {id: 'child2' as string}, 
-    [
-       React.createElement("h1", {id: 'heading' as string}, "i am an h1 tag"),
-       React.createElement("h2", {id: 'heading' as string}, "i am an h2 tag")
-    ])
-
-]);
-root.render(parent);
-
-
-// JSX
+// react component will always be rendered like this !
+root.render(<HeadingComponent />)
