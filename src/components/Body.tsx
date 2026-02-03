@@ -1,43 +1,56 @@
 import RestaurantCard from "./RestaurantCard";
-import RestaurantData from "../utils/restaurantData.json";
+// import RestaurantData from "../utils/restaurantData.json";
 import { useState, useEffect } from "react";
 
 type Restaurant = {
-  info: {
-    id: string;
-    name: string;
-    cuisines: string[];
-    avgRating: number;
-    cloudinaryImageId: string;
-    costForTwo: string;
-    sla: {
-      deliveryTime: number;
-    }
-  }
-}
+    info: {
+        id: string;
+        name: string;
+        cuisines: string[];
+        avgRating: number;
+        cloudinaryImageId: string;
+        costForTwo: string;
+        sla: {
+            deliveryTime: number;
+        };
+    };
+};
 
 const Body = () => {
     //Local State Varibale - super power variable
-    const [listOfRestaurants, setlistOfRestaurants] = useState<Restaurant[]>([]);
+    const [listOfRestaurants, setlistOfRestaurants] = useState<Restaurant[]>(
+        [],
+    );
+
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const data = await fetch(
+                const res = await fetch(
                     "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.4779617&lng=77.3288359&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
                 );
 
-                const json = await data.json();
-                console.log(json);
+                const json = await res.json();
+
+                const cards = json?.data?.cards || [];
+
+                const restaurantCard = cards.find(
+                    (card: any) =>
+                        card?.card?.card?.gridElements?.infoWithStyle
+                            ?.restaurants,
+                );
+
                 const restaurants =
-                    json?.data?.cards[4]?.card?.card?.gridElements
-                        ?.infoWithStyle?.restaurants || [];
+                    restaurantCard?.card?.card?.gridElements?.infoWithStyle
+                        ?.restaurants || [];
+
                 setlistOfRestaurants(restaurants);
-            } catch (err) {
-                console.log(err);
-                setlistOfRestaurants(RestaurantData.resList);
+            } catch (error) {
+                console.error("Error fetching restaurants:", error);
+                // setlistOfRestaurants(RestaurantData.resList);
             }
         };
+
         fetchData();
     }, []);
 
