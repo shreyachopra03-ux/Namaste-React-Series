@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import RestaurantData from "../utils/restaurantData.json";
 import { useState, useEffect } from "react";
 
+
 type Restaurant = {
   info: {
     id: string;
@@ -17,7 +18,7 @@ type Restaurant = {
 }
 
 const Body = () => {
-    //Local State Varibale -> super power variable
+    //Local State Variable -> super power variable
     const [listOfRestaurants, setlistOfRestaurants] = useState<Restaurant[]>([]);
 
     useEffect(() => {
