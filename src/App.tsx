@@ -4,6 +4,8 @@ import "./index.css";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import RestaurantCard from "./components/RestaurantCard";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import About from "./components/About";
 
 /*
 const resList = [
@@ -366,7 +368,19 @@ const AppLayout = () => {
     );
 };
 
+const appRouter = createBrowserRouter([
+    {
+        path: "/",
+        element: <AppLayout />
+    },
+    {
+        path: '/about',
+        element: <About />
+    },
+]);
+
+
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement
 );
-root.render(<AppLayout />);
+root.render(<RouterProvider router={appRouter} />);
