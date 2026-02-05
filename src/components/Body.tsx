@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import RestaurantData from "../utils/restaurantData.json";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import {Link} from "react-router-dom";
 
 type Restaurant = {
     info: {
@@ -21,7 +22,9 @@ const Body = () => {
     //Local State Variable -> super power variable
     // <Restaurant[]> => iska mtlb hai ki jo bhi value aayegi vo Restaurant type ke objects ka ARRAY hoga
     // ([]) => intial value mtlb starting mei koi restaurant nhi hai
+    
     const [listOfRestaurants, setlistOfRestaurants] = useState<Restaurant[]>([]);
+    const [filteredRestaurant, setFilteredRestaurant] = useState<Restaurant[]>([]);
 
     const [searchText, setSearchText] = useState("");
 
@@ -31,11 +34,12 @@ const Body = () => {
         const fetchData = async () => {
             try {
                 const res = await fetch(
-                    "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.4779617&lng=77.3288359&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
+                    "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.4779617&lng=77.3288359&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
                 );
 
                 const json = await res.json();
 
+                // Optional Chaining
                 const cards = json?.data?.cards || [];
 
                 const restaurantCard = cards.find((card: any) =>
@@ -48,7 +52,8 @@ const Body = () => {
                         ?.restaurants || [];
 
                 setlistOfRestaurants(restaurants);
-             
+                setFilteredRestaurant(restaurants);
+
                 }
                 catch (err) {
                   console.log(err);
@@ -85,8 +90,7 @@ const Body = () => {
 
                         const filteredRestaurants = listOfRestaurants.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
                         console.log(filteredRestaurants)
-                        setlistOfRestaurants(filteredRestaurants);
-                        
+                        setFilteredRestaurant(filteredRestaurants);
                     }}
                     >
                     Search
@@ -104,11 +108,16 @@ const Body = () => {
             </div>
 
             <div className="res-container">
-                {listOfRestaurants.map((restaurant) => (
+                {filteredRestaurant.map((restaurant) => (
+                    <Link 
+                    key={"restaurant.info.id"}
+                    to={"/restaurants/" + restaurant.info.id}
+                    >
                     <RestaurantCard
                         key={restaurant.info.id}
-                        resData={restaurant}
-                    />
+                        resData={restaurant}/>
+                    </Link>
+                    
                 ))}
             </div>
         </div>
