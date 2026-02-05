@@ -1,19 +1,22 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import Shimmer from "./Shimmer";
+import { MENU_API } from "../utils/constants";
 
 const RestaurantMenu = () => {
     const [resInfo, setResInfo] = useState<any>(null);
+
+    const { resId } = useParams();
  
     useEffect(() => {
         fetchMenu();
-    }, []);
+    }, [resId]);
 
     const fetchMenu = async () => {
-        const data = await fetch("https://foodfire.onrender.com/api/menu?page-type=REGULAR_MENU&complete-menu=true&lat=28.60075&lng=77.08150&&submitAction=ENTER&restaurantId=72605");
+        const data = await fetch(MENU_API + resId);
         const json = await data.json();
-
-        console.log(json);
         setResInfo(json?.data);
+        console.log("API URL =>", MENU_API + resId);
 
     };
 
@@ -41,14 +44,15 @@ const RestaurantMenu = () => {
             <h3>{cuisines?.join(', ')}</h3>
             <h3>{costForTwoMessage}</h3>
 
-            <ul>
-                {menuItems?.map((item: any) => {
-                    <li key={item.card.info.id}>
-                    {item.card.info.name} – ₹
-                    {(item.card.info.price || item.card.info.defaultPrice) / 100} 
-                    </li>
-                })}
-            </ul>
+     <ul>
+  {menuItems?.map((item: any, index:number) => (
+    <li key={index}>
+      {item.card.info.name} – {'Rs.'}
+      {(item.card.info.price || item.card.info.defaultPrice) / 100}
+    </li>
+  ))}
+</ul>
+
         </div>
     );
 };
