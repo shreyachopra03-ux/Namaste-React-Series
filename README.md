@@ -60,3 +60,7 @@ import {Component} from "path";
 (Normal JS utility functions)
 - useCase() - Superpowerful state variables in react
 - useEffect() - 
+
+# Routing
+- Client Side Routing
+- Server Side Routing
