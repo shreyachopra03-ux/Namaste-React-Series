@@ -37,7 +37,6 @@ class UserClass extends React.Component<Props, State> {
          avatar_url: json.avatar_url
     },
     });
-
     console.log(json);
  }
 
@@ -64,7 +63,6 @@ class UserClass extends React.Component<Props, State> {
              <div className="user-card">
             <h2>Name: {name}</h2>
             <img src={avatar_url} alt="image" />
-            {/* <h2>Count: {count}</h2> */}
             <h3>Location: {location}</h3>
             <h4>Contact info : @chopra_shreya03</h4>
         </div>
