@@ -26,8 +26,10 @@ React tries to batch up the task because manipulating DOM is really very expensi
       - Second Constuctor
       - second Render
 
-- Child 1 component did mount
-- Child 2 component did mount
+    <DOM UPDATED- IN A SINGLE BATCH>
+    - Child 1 component did mount
+    - Child 2 component did mount
+
 - Parent component did mount
 
 */
