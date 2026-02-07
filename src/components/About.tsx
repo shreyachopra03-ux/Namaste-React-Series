@@ -9,8 +9,7 @@ const About  = () => {
             <h2>This is Namaste React Web Series</h2>
             <User name={"Shreya Chopra (function)"} />
 
-            <UserClass name={"First"} location={"Dehradun (class)"}/>
-            <UserClass name={"Second"} location={"US"}/>
+            <UserClass/>
         </div>
     );
 };
