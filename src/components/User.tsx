@@ -14,7 +14,7 @@ const User= ({name}: UserProps) => {
         }, 1000);
         console.log("useEffect");
 
-        // this is the unmounting phase of useEffect 
+        // this is the unmounting phase of useEffect or also called cleanup fn 
         return () => {
             clearInterval(timer);
             console.log("useEffect Return");
