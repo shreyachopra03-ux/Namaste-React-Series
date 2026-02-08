@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import Header from "./components/Header";
@@ -9,6 +9,19 @@ import About from "./components/About";
 import ContactUs from "./components/ContactUs";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
+// import Grocery from "./components/Grocery";
+import Shimmer from "./components/Shimmer";
+
+
+// App chunking
+// Code Splitting
+// Dynamic Building
+// lazy laoding
+// on demand loading
+
+// way of importing lazy
+const Grocery = lazy(() => import("./components/Grocery"));
+
 
 const AppLayout = () => {
     return (
@@ -37,6 +50,12 @@ const appRouter = createBrowserRouter([
                 element: <ContactUs />,
             },
             {
+                path: "/grocery",
+                element: <Suspense fallback={<Shimmer />}>
+                         <Grocery />
+                         </Suspense>,
+            },
+            {
                 path: "/restaurants/:resId",
                 element: <RestaurantMenu />,
             },
@@ -45,8 +64,6 @@ const appRouter = createBrowserRouter([
     },
 ]);
 
-const root = ReactDOM.createRoot(
-    document.getElementById("root") as HTMLElement,
-);
+const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 
 root.render(<RouterProvider router={appRouter} />);
