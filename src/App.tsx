@@ -9,8 +9,6 @@ import About from "./components/About";
 import ContactUs from "./components/ContactUs";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
-// import Grocery from "./components/Grocery";
-import Shimmer from "./components/Shimmer";
 
 
 // App chunking
@@ -51,7 +49,7 @@ const appRouter = createBrowserRouter([
             },
             {
                 path: "/grocery",
-                element: <Suspense fallback={<Shimmer />}>
+                element: <Suspense fallback={<h1>Loading ...</h1>}>
                          <Grocery />
                          </Suspense>,
             },
