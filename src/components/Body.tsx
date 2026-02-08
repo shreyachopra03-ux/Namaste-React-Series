@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import RestaurantData from "../utils/restaurantData.json";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 type Restaurant = {
     info: {
@@ -23,7 +24,7 @@ const Body = () => {
     // ([]) => intial value mtlb starting mei koi restaurant nhi hai
 
     const [listOfRestaurants, setlistOfRestaurants] = useState<Restaurant[]>(
-        [],
+        []
     );
     const [filteredRestaurant, setFilteredRestaurant] = useState<Restaurant[]>(
         [],
@@ -47,8 +48,7 @@ const Body = () => {
 
                 const restaurantCard = cards.find(
                     (card: any) =>
-                        card?.card?.card?.gridElements?.infoWithStyle
-                            ?.restaurants,
+                    card?.card?.card?.gridElements?.infoWithStyle?.restaurants,
                 );
 
                 const restaurants =
@@ -57,19 +57,31 @@ const Body = () => {
 
                 setlistOfRestaurants(restaurants);
                 setFilteredRestaurant(restaurants);
-            } catch (err) {
+                 } catch (err) {
                 console.log(err);
                 setlistOfRestaurants(RestaurantData.resList);
-            }
+                 }
         };
 
         fetchData();
     }, []);
 
+
+     const onlineStatus = useOnlineStatus();
+     if( onlineStatus === false ) 
+        return (
+          <h1>
+            Looks like your're offline ! Please Check your internet connection !!
+          </h1>
+    );
+
+
     // This is Conditional Rendering -> rendering on the basis of any condition
     if (listOfRestaurants.length === 0) {
         return <Shimmer />;
     }
+
+    
 
     return (
         <div className="body">
@@ -91,9 +103,7 @@ const Body = () => {
 
                             const filteredRestaurants =
                                 listOfRestaurants.filter((res) =>
-                                    res.info.name
-                                        .toLowerCase()
-                                        .includes(searchText.toLowerCase()),
+                                    res.info.name.toLowerCase().includes(searchText.toLowerCase()),
                                 );
                             console.log(filteredRestaurants);
                             setFilteredRestaurant(filteredRestaurants);
