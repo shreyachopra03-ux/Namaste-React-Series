@@ -3,17 +3,16 @@ import { useState } from "react";
 
 type Props = {
     data: any;
+    showItems: boolean; 
+    setShowIndex: any
 };
 
-const RestaurantCategory= ({ data }:Props) => {
-
-    const [showItems, setShowItems] = useState(false);
-
-    const handleClick = () => {
-       
-        setShowItems(!showItems);
-    }
+const RestaurantCategory= ({ data, showItems, setShowIndex }:Props) => {
   
+    const handleClick = () => {
+        setShowIndex();
+    }
+
     return (
          <div>
             {/* Header */}
