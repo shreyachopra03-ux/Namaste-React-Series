@@ -1,15 +1,17 @@
 // This is how we write a 'named import'
 import {LOGO_URL} from "../utils/constants";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   const [btnNameReact, setbtnNameReact] = useState('Login');
   // console.log('header rendered');
 
   const onlineStatus = useOnlineStatus();
+
+  const {loggedInUser} = useContext(UserContext);
 
   // vvvv imp interview ques :
   // if no dependency array => useEffect is called on every component render 
@@ -49,6 +51,7 @@ const Header = () => {
           >
           {btnNameReact}
           </button>
+          <li className="px-4">{ loggedInUser }</li>
         </ul>
       </div>
     </div>
