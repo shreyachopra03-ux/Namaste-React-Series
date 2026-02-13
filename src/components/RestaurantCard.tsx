@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { CDN_URL } from "../utils/constants";
+import UserContext from "../utils/UserContext";
+import { useContext } from "react";
 
 type RestaurantCardProps = {
   resData: {
@@ -21,15 +23,18 @@ const RestaurantCard = (props: RestaurantCardProps) => {
   const {info} = props.resData;
   const {id} = props.resData.info;
 
+  const { loggedInUser } = useContext(UserContext);
   return (
     <Link to={`/restaurants/${id}`} className="restaurant-card-link">
-      <div className="m-4 p-4 w-[250px] bg-orange-100 hover:bg-orange-200 rounded-lg">
+      <div className="m-4 p-4 w-62.5 bg-orange-100 hover:bg-orange-200 rounded-lg">
         <img className="rounded-lg" alt="res-logo" src={CDN_URL + info.cloudinaryImageId}/>
         <h4 className="font-bold py-4 text-lg">{info.name}</h4>
         <h4>{info.cuisines.join(", ")}</h4>
         <h4>{info.avgRating}⭐</h4>
         <h4>{info.costForTwo}</h4>
         <h4>{info.sla.deliveryTime} mins</h4>
+        <h4>User: { loggedInUser }</h4>
+
       </div>
     </Link>
   );
