@@ -10,7 +10,7 @@ const RestaurantMenu = () => {
     
     const resInfo = useRestaurantMenu(resId);
 
-    const [showIndex, setShowIndex] = useState(0);
+    const [showIndex, setShowIndex] = useState(null);
 
     if(resInfo === null) return <Shimmer/>
 
@@ -40,7 +40,7 @@ const RestaurantMenu = () => {
         <p className="font-bold text-lg">{cuisines?.join(', ')} - {costForTwoMessage}</p>
         <div>
             {/* categories accordion */}
-            {categories?.map((category:any, index:number) => (
+            {categories?.map((category:any, index:any) => (
                 // THIS IS A CONTROLLED COMPONENT
                 <RestaurantCategory 
                 key={category?.card?.card?.title}
