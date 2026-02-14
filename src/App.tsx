@@ -9,6 +9,9 @@ import About from "./components/About";
 import ContactUs from "./components/ContactUs";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
+import { createRoot } from "react-dom/client"; 
+import { useContext, useEffect, useState } from "react";
+import UserContext from "./utils/UserContext";
 
 
 // App chunking
@@ -16,17 +19,32 @@ import RestaurantMenu from "./components/RestaurantMenu";
 // Dynamic Building
 // lazy laoding
 // on demand loading
+// Dynamic Import
 
 // way of importing lazy
 const Grocery = lazy(() => import("./components/Grocery"));
 
-
 const AppLayout = () => {
+
+    const [userName, setUserName] = useState("");
+
+    // Authentication
+    useEffect(() => {
+    // Make an API call and send username and password
+    const data:any = {
+        name: 'Shreya Chopra',
+    };
+    setUserName(data.name);
+    }, []);
+
+
     return (
+        <UserContext.Provider value={{ loggedInUser: userName}}>
         <div className="app">
             <Header />
             <Outlet />
         </div>
+        </UserContext.Provider>
     );
 };
 
