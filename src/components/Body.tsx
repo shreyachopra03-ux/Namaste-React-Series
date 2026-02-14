@@ -34,7 +34,7 @@ const Body = () => {
     const RestaurantCardAvailable = OpenOrNot(RestaurantCard);
    
     // whenever state variable updates, react triggers a reconciliation cycle (re-renders the component)
-    console.log("Body Rendered", listOfRestaurants);
+    // console.log("Body Rendered", listOfRestaurants);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -98,7 +98,7 @@ const Body = () => {
                         onClick={() => {
                             // Filter the restaurant cards and update the UI
                             // searchText
-                            console.log(searchText);
+                                       console.log(searchText);
 
                             const filteredRestaurants =
                                 listOfRestaurants.filter((res) =>
@@ -111,18 +111,10 @@ const Body = () => {
                     Search
                     </button>
                 </div>
-
-                <button
-                    className="bg-orange-500 my-12 px-3 -ml-8 items-center text-sm text-white rounded-lg"
-                    onClick={() => {
-                        const filteredList = listOfRestaurants.filter(
-                            (res) => res.info.avgRating > 4,
-                         );
-                        setlistOfRestaurants(filteredList);
-                    }}
-                >
-                Top Rated Restaurants
-                </button>
+                <div className="search m-4 p-4 flex items-center">
+                <label className="p-2">UserName :</label>
+                <input className="border border-black  p-2"/>
+                </div>
             </div>
 
             <div className="flex flex-wrap items-center space-between">
