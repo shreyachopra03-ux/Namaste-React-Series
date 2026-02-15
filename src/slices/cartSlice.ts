@@ -10,7 +10,7 @@ const cartSlice = createSlice({
     //Reducers are basically objects that define what type of actions they can take.
     // action.payload is the daata that we send during dispatch (action).
     // state.items means the items array inside the state, and action.payload is the data that gets added to this array.
-    
+
     reducers: {
         addItem: (state:any, action:any) => {
             state.items.push(action.payload);
@@ -19,7 +19,7 @@ const cartSlice = createSlice({
             state.items.pop();
         },
         clearCart: (state:any, action:any) => {
-            state.items.length = 0;
+            state.items.length = 0; // []
         },
     },
 });
