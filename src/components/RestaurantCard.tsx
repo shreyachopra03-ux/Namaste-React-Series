@@ -23,6 +23,8 @@ const RestaurantCard = (props: RestaurantCardProps) => {
   const {info} = props.resData;
   const {id} = props.resData.info;
 
+   console.log("resData:", props.resData);
+
   const { loggedInUser } = useContext(UserContext);
   return (
     <Link to={`/restaurants/${id}`} className="restaurant-card-link">
@@ -44,6 +46,8 @@ const RestaurantCard = (props: RestaurantCardProps) => {
 // input - RestaurantCard => RestaurantCardAvailable
 
 export const OpenOrNot = (RestaurantCard:any) => {
+  console.log("OpenOrNot:", RestaurantCard);
+
   return (props:any) => {
     return (
       <div>
