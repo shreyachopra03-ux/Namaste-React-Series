@@ -3,6 +3,19 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 describe("Contact Us Page Test Case", () => {
+
+    // This will run once before all the test cases 
+    beforeAll(() => {
+        // console.log("Runs once before all test cases");
+    });
+
+    // This will run individually before all the test cases
+    beforeEach(() => {
+        // console.log("Runs before each test case");
+    })
+
+    // Similarly we also have afterAll & afterEach
+    
     it("Should load contact us component", () => {
     render(<ContactUs/>);
 
