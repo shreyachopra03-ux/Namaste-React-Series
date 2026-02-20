@@ -1,0 +1,54 @@
+{
+    "info": {
+        "id": "236083",
+        "name": "KFC",
+        "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2025/10/17/54b1c190-a0de-4b6b-bcbb-036237258ea5_236083.JPG",
+        "locality": "LP Savani Road",
+        "areaName": "Adajan Gam",
+        "costForTwo": "₹400 for two",
+        "cuisines": [
+            "Burgers",
+            "Fast Food",
+            "Rolls & Wraps"
+        ],
+        "avgRating": 4.2,
+        "parentId": "547",
+        "avgRatingString": "4.2",
+        "totalRatingsString": "9.0K+",
+        "sla": {
+            "deliveryTime": 25,
+            "lastMileTravel": 6.8,
+            "serviceability": "SERVICEABLE",
+            "slaString": "25-30 mins",
+            "lastMileTravelString": "6.8 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2025-10-26 03:00:00",
+            "opened": true
+        },
+        "isOpen": true,
+        "type": "F",
+        "aggregatedDiscountInfoV3": {
+            "header": "40% OFF",
+            "subHeader": "UPTO ₹80"
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT"
+        },
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "externalRatings": {
+            "aggregatedRating": {
+                "rating": "--"
+            }
+        },
+        "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+    },
+    "analytics": {
+        "context": "seo-data-43bca6b8-5039-46da-935e-cdde9f114a4e"
+    },
+    "cta": {
+        "link": "https://www.swiggy.com/city/surat/kfc-lp-savani-road-adajan-gam-rest236083",
+        "type": "WEBLINK"
+    }
+}
