@@ -2,7 +2,8 @@ import ContactUs from "../ContactUs";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
-test("Should load contact us component", () => {
+describe("Contact Us Page Test Case", () => {
+    it("Should load contact us component", () => {
     render(<ContactUs/>);
 
     const heading = screen.getByRole("heading");
@@ -11,7 +12,7 @@ test("Should load contact us component", () => {
     expect(heading).toBeInTheDocument();
 });
 
-test("Should load Button inside contact component", () => {
+   test("Should load Button inside contact component", () => {
     render(<ContactUs/>);
 
     // const button = screen.getByRole("button");
@@ -24,7 +25,7 @@ test("Should load Button inside contact component", () => {
     
 });
 
-test("Should load input name inside contact component", () => {
+   it("Should load input name inside contact component", () => {
     render(<ContactUs/>);
 
     const inputName = screen.getByPlaceholderText('name')
@@ -34,7 +35,7 @@ test("Should load input name inside contact component", () => {
     
 });
 
-test("Should load 2 input boxes on the Contact component", () => {
+   test("Should load 2 input boxes on the Contact component", () => {
     render(<ContactUs/>);
 
     // Querying
@@ -49,3 +50,7 @@ test("Should load 2 input boxes on the Contact component", () => {
      // Other way of asserting
      expect(inputBoxes).not.toBe(3);
 });
+});
+
+
+
