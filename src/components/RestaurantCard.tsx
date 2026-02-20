@@ -28,7 +28,7 @@ const RestaurantCard = (props: RestaurantCardProps) => {
   const { loggedInUser } = useContext(UserContext);
   return (
     <Link to={`/restaurants/${id}`} className="restaurant-card-link">
-      <div className="m-4 p-4 w-62.5 bg-orange-100 hover:bg-orange-200 rounded-lg">
+      <div data-testid="resCard" className="m-4 p-4 w-62.5 bg-orange-100 hover:bg-orange-200 rounded-lg">
         <img className="rounded-lg" alt="res-logo" src={CDN_URL + info.cloudinaryImageId}/>
         <h4 className="font-bold py-4 text-lg">{info.name}</h4>
         <h4>{info.cuisines.join(", ")}</h4>
