@@ -20,6 +20,7 @@ const ListItem = ({items}: props) => {
         <div>
             {items?.map((item:any) => (
             <div 
+            data-testid="foodItems"
                key = {item?.card?.info?.id}
                className="border-gray-200 p-2 m-2 border-b-2 text-left flex-justify-between">
     
@@ -36,7 +37,7 @@ const ListItem = ({items}: props) => {
             
             <div className="w-3/12 p-4">
             <div className="absolute">
-            <button
+            <button 
              className="rounded-lg p-2 bg-black text-white shadow-lg m-auto"
              onClick={() => handleAddItem(item)}>
              Add +
