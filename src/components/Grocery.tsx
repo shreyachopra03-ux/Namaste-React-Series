@@ -1,7 +1,7 @@
 const Grocery = () => {
     return (
-        <h1>
-            This is our online grocery store, which has a lot of child components inside this web page !!
+        <h1 className="flex justify-center items-center text-black">
+            This is our online grocery store !
         </h1>
     );
 };
