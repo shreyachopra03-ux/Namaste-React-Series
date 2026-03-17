@@ -1,17 +1,27 @@
 const ContactUs = () => {
     return (
-        <div>
-            <h1 className="font-bold text-3xl p-4 m-4">Contact Us page</h1>
-            <form>
-                <input type="text" 
-                className="border border-black -2 p-2" 
-                placeholder="name"
+        <div className="bg-gray-100 mt-8 rounded-lg w-[350px] border-transparent mx-auto min-h-[300px]">
+            <h1 className="flex justify-center items-center font-semibold text-3xl p-4 m-4">
+                Get in touch
+            </h1>
+            <form className="flex-col -mt-3 items-center justify-center flex">
+                 <input type="text" 
+                className="rounded-md w-1/2 border border-black text-sm p-0.5" 
+                placeholder="Name"
                 />
-                <input type="text"
-                 className="border border-black -2 p-2" 
-                 placeholder="message" 
+                 <input type="text"
+                 className="rounded-md text-sm mt-2 w-1/2 border border-black -2 p-0.5"
+                 placeholder="Email"
                  />
-                <button className="border-black m-2 p-2 bg-gray-100 rounded-lg border">
+                 <input type="text"
+                 className="rounded-md text-sm mt-2 w-1/2 border border-black -2 p-0.5"
+                 placeholder="Phone"
+                 />
+                 <input type="text"
+                 className="rounded-md mt-2 w-1/2 border border-black text-sm p-0.5" 
+                 placeholder="Message" 
+                 />
+                <button className="mt-5 border-orange-500 p-1 w-3/8 bg-orange-500 rounded-lg text-white font-bold">
                 Submit
                 </button>
             </form>
