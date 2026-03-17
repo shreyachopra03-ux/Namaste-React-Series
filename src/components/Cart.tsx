@@ -24,8 +24,8 @@ const Cart = () => {
                 Clear Cart
             </button>
             {cartItems.length == 0 && (
-                <h1 className="font-mono m-7">Your cart is empty<br/>
-                You can go to the home page to view more restaurants❤️
+                <h1 className="font-mono m-7">Your cart is empty 😔<br/>
+                Explore restaurants and add some delicious items to your cart❤️
                 </h1>
             )} 
             <button className="p-2 -my-4 rounded-md text-white bg-orange-600 cursor-pointer">
