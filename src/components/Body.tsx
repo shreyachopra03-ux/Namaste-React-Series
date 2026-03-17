@@ -87,36 +87,54 @@ const Body = () => {
 
     return (
         <div className="body">
-            <div className="filter flex">
-                <div className="search m-4 p-4">
+            <div className="filter flex justify-center items-center py-4">
+                <div className="flex items-center search bg-white shadow-sm border border-gray-100 rounded-full py-1 w-full max-w-sm px-4">
                     <input
                         type="text"
                         data-testid="searchInput"
-                        className="border border-solid border-black"
+                        className="grow px-2 py-2 focus:outline-none outline:none bg-transparent placeholder-gray-500 text-md"
+                        placeholder="Search..."
                         value={searchText}
                         onChange={(e) => {
                             setSearchText(e.target.value);
-                        }}
+                        }}   
                     />
-                    <button className="px-4 py-1.5 bg-orange-500 m-4 text-xs text-white rounded-lg"
+                    <div className="h-7 w-0.5 bg-gray-200 mx-2"></div>
+                    <button
+                     className="px-2 py-2 font-bold text-gray-800 text-sm"
                         onClick={() => {
                             // Filter the restaurant cards and update the UI
                             // searchText
-                                       console.log(searchText);
+                                // console.log(searchText);
 
                             const filteredRestaurants =
                                 listOfRestaurants.filter((res) =>
                                     res.info.name.toLowerCase().includes(searchText.toLowerCase()),
                                 );
-                            console.log(filteredRestaurants);
+                            // console.log(filteredRestaurants);
+                            setFilteredRestaurant(filteredRestaurants);
+                        }}>
+                    Search
+                    </button>
+                    {/* <button className="px-4 py-1.5 bg-orange-500 m-4 text-xs text-white rounded-lg"
+                        onClick={() => {
+                            // Filter the restaurant cards and update the UI
+                            // searchText
+                                // console.log(searchText);
+
+                            const filteredRestaurants =
+                                listOfRestaurants.filter((res) =>
+                                    res.info.name.toLowerCase().includes(searchText.toLowerCase()),
+                                );
+                            // console.log(filteredRestaurants);
                             setFilteredRestaurant(filteredRestaurants);
                         }}
                     >
                     Search
-                    </button>
+                    </button> */}
                 </div>
-                <div className="search m-4 p-4 flex items-center">
-                <label className="p-2">UserName :</label>
+                <div className="search ml-8 flex items-center">
+                <label className="text-sm font-medium mr-2">UserName :</label>
                 <input 
                 className="border border-black  p-2"
                 value={loggedInUser}
