@@ -86,13 +86,13 @@ const Body = () => {
     }
 
     return (
-        <div className="body">
-            <div className="filter flex justify-center items-center py-4">
-                <div className="flex items-center search bg-white shadow-sm border border-gray-100 rounded-full py-1 w-full max-w-sm px-4">
+        <div className="body min-h-screen pb-50 md:pb-0 pt-2">
+            <div className="filter flex justify-center items-center py-4 flex-col pt-2">
+                <div className="mt-2 md:mt-0 search flex items-center bg-white shadow-sm border border-gray-100 rounded-full py-1 w-full max-w-sm px-4">
                     <input
                         type="text"
                         data-testid="searchInput"
-                        className="grow px-2 py-2 focus:outline-none outline:none bg-transparent placeholder-gray-500 text-md"
+                        className="mt-3 md:mt-0 grow px-2 py-2 focus:outline-none outline:none bg-transparent placeholder-gray-500 text-md"
                         placeholder="Search..."
                         value={searchText}
                         onChange={(e) => {
@@ -133,27 +133,29 @@ const Body = () => {
                     Search
                     </button> */}
                 </div>
-                <div className="search ml-8 flex items-center">
+
+                {/* <div className="search m-0 -pl-2 mt-4  ml-8 flex items-center">
                 <label className="text-sm font-medium mr-2">UserName :</label>
                 <input 
-                className="border border-black  p-2"
+                className="rounded-lg border w-[200px] border-black p-2"
                 value={loggedInUser}
                 onChange={(e) => setUserName(e.target.value)}
                 />
-                </div>
+                </div> */}
             </div>
 
-            <div className="flex flex-wrap items-center space-between">
+            <div className="flex flex-wrap justify-center min-h-screen pb-20">
                 {filteredRestaurant.map((restaurant) => {
                     return (
-                    <div key={restaurant.info.id}>
+                    <div
+                    className="flex"
+                     key={restaurant.info.id}>
                     {restaurant.info.isOpen ? (
                         <RestaurantCardAvailable resData={restaurant} />
                     ) : (
                         <RestaurantCard resData={restaurant} />
                     )}
                     </div>
-
                     );
                     })}
             </div>
