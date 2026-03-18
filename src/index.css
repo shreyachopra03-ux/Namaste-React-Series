@@ -9,4 +9,5 @@ html, body {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
+  scroll-behavior: smooth
 }
