@@ -15,11 +15,11 @@ const RestaurantCategory= ({ data, showItems, setShowIndex }:Props) => {
 
     return (
          <div>
-            {/* Header */}
-        <div className="m-auto w-6/12 bg-gray-50 shadow-lg p-4 mx-auto my-4">
+            {/* Accordion Header */}
+        <div className="mx-auto w-[95%] md:w-8/12 bg-gray-50 shadow-lg p-4 my-4">
         <div className="flex justify-between cursor-pointer" onClick={handleClick}>
-            <span className="font-bold text-lg">{data?.title} ({data?.itemCards?.length})</span>
-            <span>⬇️</span>
+            <span className="font-semibold text-md">{data?.title} ({data?.itemCards?.length})</span>
+            <span className="">⬇️</span>
         </div>
             
             {/* Accordion Body */}
