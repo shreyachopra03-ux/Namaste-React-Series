@@ -10,5 +10,5 @@ const appStore = configureStore({
 
 export default appStore;
 
-// AppDispatch tell the exact type of dispatch funtion in redux to TS, so that invalid actions could be dispatched 
+// AppDispatch tells the exact type of dispatch funtion in redux to TS, so that invalid actions could be dispatched 
 export type AppDispatch = typeof appStore.dispatch;
