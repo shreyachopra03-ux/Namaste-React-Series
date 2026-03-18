@@ -7,16 +7,21 @@ import UserContext from "../utils/UserContext";
 const About  = () => {
     const {loggedInUser, setUserName} = useContext(UserContext)
     return (
-        <div>
-            <h1>About</h1>
-            <h2>This is Namaste React Web Series</h2>
-            <User name={"Shreya Chopra (function)"} />
-            <label className="p-2">UserName :</label>
-            <input 
-            className="border border-black  p-2"
-            value={loggedInUser}
-            onChange={(e) => setUserName(e.target.value)}/>
-            <UserClass/>
+        // <div>
+        //     <h1>About</h1>
+        //     <h2>This is Namaste React Web Series</h2>
+        //     <User name={"Shreya Chopra (function)"} />
+        //     <label className="p-2">UserName :</label>
+        //     <input 
+        //     className="border border-black  p-2"
+        //     value={loggedInUser}
+        //     onChange={(e) => setUserName(e.target.value)}/>
+        //     <UserClass/>
+        // </div>
+        <div className="flex justify-center items-center text-center">
+            Sandburgs is a new-age consumer-first organization offering an easy-to-use convenience 
+            <br/>
+            platform, accessible through a unified app.
         </div>
     );
 };
