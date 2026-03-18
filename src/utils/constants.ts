@@ -7,7 +7,6 @@ export const LOGO_URL:string = "https://media.istockphoto.com/id/1435983029/vect
 
 export const MENU_API:string = "https://foodfire.onrender.com/api/menu?page-type=REGULAR_MENU&complete-menu=true&lat=28.60090200875999&lng=77.08098202943802&&submitAction=ENTER&restaurantId="
 
-
 // 2 types of export are there :
         //   - Default export
         //   - Named export
