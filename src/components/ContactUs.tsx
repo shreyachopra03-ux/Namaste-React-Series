@@ -24,6 +24,12 @@ const ContactUs = () => {
                 <button className="mt-5 border-orange-500 p-1 w-3/8 bg-orange-500 rounded-lg text-white font-bold">
                 Submit
                 </button>
+                <p className="text-center text-[11px] mt-2 font-semibold">
+                By contacting us you agree to the
+                Terms and Conditions
+                <br/>
+                and Privacy Policy
+                </p>
             </form>
         </div>
     )
