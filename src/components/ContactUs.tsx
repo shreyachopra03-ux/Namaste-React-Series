@@ -1,6 +1,6 @@
 const ContactUs = () => {
     return (
-        <div className="bg-gray-100 mt-8 rounded-lg w-[350px] border-transparent mx-auto min-h-[300px]">
+        <div className="bg-gray-100 mt-8 rounded-lg w-87.5 border-transparent mx-auto min-h-75">
             <h1 className="flex justify-center items-center font-semibold text-3xl p-4 m-4">
                 Get in touch
             </h1>
