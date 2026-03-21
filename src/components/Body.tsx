@@ -116,32 +116,9 @@ const Body = () => {
                         }}>
                     Search
                     </button>
-                    {/* <button className="px-4 py-1.5 bg-orange-500 m-4 text-xs text-white rounded-lg"
-                        onClick={() => {
-                            // Filter the restaurant cards and update the UI
-                            // searchText
-                                // console.log(searchText);
-
-                            const filteredRestaurants =
-                                listOfRestaurants.filter((res) =>
-                                    res.info.name.toLowerCase().includes(searchText.toLowerCase()),
-                                );
-                            // console.log(filteredRestaurants);
-                            setFilteredRestaurant(filteredRestaurants);
-                        }}
-                    >
-                    Search
-                    </button> */}
                 </div>
 
-                {/* <div className="search m-0 -pl-2 mt-4  ml-8 flex items-center">
-                <label className="text-sm font-medium mr-2">UserName :</label>
-                <input 
-                className="rounded-lg border w-[200px] border-black p-2"
-                value={loggedInUser}
-                onChange={(e) => setUserName(e.target.value)}
-                />
-                </div> */}
+             
             </div>
 
             <div className="flex flex-wrap justify-center min-h-screen pb-20">
