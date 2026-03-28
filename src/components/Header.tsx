@@ -35,24 +35,24 @@ const Header = () => {
       </div>
       <div className="-ml-8 flex items-center">
         <ul className="flex px-4">
-          <li className="text-gray-600 font-semibold cursor-pointer font-serif px-4 hover:scale-105 transition duration-300 ease-out text-[8.5px] md:text-[15px]">
+          <li className="text-gray-600 font-semibold cursor-pointer font-serif px-4 hover:scale-105 transition-all duration-300 ease-out text-[8.5px] md:text-[15px]">
             <Link to="/">Home</Link>
           </li>
-          <li className="text-gray-600 font-semibold cursor-pointer hover:scale-105 transition duration-300 ease-out font-serif px-4 text-[8.5px] md:text-[15px]">
+          <li className="text-gray-600 font-semibold cursor-pointer hover:scale-105 transition-all duration-300 ease-out font-serif px-4 text-[8.5px] md:text-[15px]">
             <Link to="/about">About Us</Link>
             </li>
-          <li className="text-[9px] md:text-[15px] cursor-pointer text-gray-600 font-semibold hover:scale-105 transition duration-300 ease-out px-4  font-serif">
+          <li className="text-[9px] md:text-[15px] cursor-pointer text-gray-600 font-semibold hover:scale-105 transition-all duration-300 ease-out px-4  font-serif">
             <Link to="/cart">Cart</Link>
             <i className="fa-solid fa-cart-shopping text-gray-500 px-1"></i>
             <Link to="/cart">({cartItems.length})</Link>
           </li>
-          <li className="text-gray-600 cursor-pointer font-semibold hover:scale-105 transition duration-300 ease-out font-serif px-4 text-[8.5px] md:text-[15px]">
+          <li className="text-gray-600 cursor-pointer font-semibold hover:scale-105 transition-all duration-300 ease-out font-serif px-4 text-[8.5px] md:text-[15px]">
             <Link to="/grocery">Grocery</Link></li>
-          <li className="text-gray-600 cursor-pointer font-semibold hover:scale-105 transition duration-300 ease-out px-4 font-serif text-[8.5px] md:text-[15px]">
+          <li className="text-gray-600 cursor-pointer font-semibold hover:scale-105 transition-all duration-300 ease-out px-4 font-serif text-[8.5px] md:text-[15px]">
             <Link to="/contactUs">Contact</Link>
           </li>
           
-          <button className="login cursor-pointer text-gray-600 font-semibold hover:scale-105 flex transition duration-300 ease-out font-serif text-[8.5px] md:text-[15px] px-4"
+          <button className="login cursor-pointer text-gray-600 font-semibold hover:scale-105 flex transition-all duration-300 ease-out font-serif text-[8.5px] md:text-[15px] px-4"
             onClick={() => {
               btnNameReact === "Login"
               ? setbtnNameReact('Logout')
@@ -61,10 +61,9 @@ const Header = () => {
           >
           {btnNameReact}
           </button>
-          <li className="-ml-6 -mt-0.45 md:-m-1 cursor-pointer text-[8.5px] md:text-[13px] md:-ml-4 md:-my-[1.5px] px-4 hover:scale-105 transition duration-300 ease-out">
+          <li className="-ml-6 -mt-0.45 md:-m-1 cursor-pointer text-[8.5px] md:text-[13px] md:-ml-4 md:-my-[1.5px] px-4 hover:scale-105 transition-all duration-300 ease-out">
             {onlineStatus ? "🟢" : "🔴"} 
           </li>
-          {/* <li className="text-gray-600 font-semibold hover:scale-105 transition duration-300 ease-out px-4 font-serif">{ loggedInUser }</li> */}
         </ul>
       </div>
     </div>
