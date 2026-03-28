@@ -20,7 +20,7 @@ const Cart = () => {
         
         <div className="w-6/12 m-auto">   
         {cartItems.length > 0 && (
-             <button className="rounded-md px-5 py-1 m-2 text-sm text-white bg-orange-500"
+             <button className="cursor-pointer rounded-md px-5 py-1 m-2 text-sm text-white bg-orange-500"
                onClick={handleClearCart}>
                 Clear Cart
             </button>
@@ -35,7 +35,7 @@ const Cart = () => {
             </h1>
             </>
         )} 
-            <button className="-mt-6 p-2 text-sm font-semibold -my-4 rounded-md text-white bg-orange-500 cursor-pointer">
+            <button className="text-sm font-semibold px-5 py-1 m-2 rounded-md text-white bg-orange-500 cursor-pointer">
                 <Link to="/">See restaurants near you</Link>
             </button>
             
