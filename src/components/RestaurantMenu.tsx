@@ -36,11 +36,13 @@ const RestaurantMenu = () => {
 
     return (
     <div className="menu text-center">
-        <h1 className="font-semibold my-6 text-lg">{name}</h1>
-        <p className="text-gray-500 font-semibold -mt-6 text-sm">
+        <h1 className="font-bold my-6 -ml-176 text-2xl">{name}</h1>
+        <p className="text-gray-500 -mt-4 -ml-170 font-semibold text-sm">
             {cuisines?.join(', ')} - {costForTwoMessage}
         </p>
-        <div>
+       <div className="h-px w-full bg-gray-200 my-5"></div>
+        <div className="flex flex-col items-center w-full min-h-screen pb-60 md:pb-0">
+            
             {/* categories accordion */}
             {categories?.map((category:any, index:any) => (
                 // THIS IS A CONTROLLED COMPONENT
