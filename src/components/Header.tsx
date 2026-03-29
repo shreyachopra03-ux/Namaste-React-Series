@@ -29,7 +29,7 @@ const Header = () => {
   }, [btnNameReact]);
 
   return (
-    <div className="py-3 m-3 md:py-0 rounded-lg flex justify-between bg-white shadow-lg md:m-2">
+    <div className="py-3 m-3 md:py-0 rounded-lg flex justify-between bg-white shadow-2xl md:m-2">
       <div className="-ml-7 rounded-lg logo-container w-25">
          <img className="py-2 mt-1 m-5 pr-6 rounded-lg" src={LOGO_URL}></img>
       </div>
