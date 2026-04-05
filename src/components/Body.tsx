@@ -22,6 +22,7 @@ import rasmalaiIcon from "url:../assets/rasmalai.png";
 import saladsIcon from "url:../assets/salads.png";
 import waffleIcon from "url:../assets/waffle.png";
 import shakeIcon from "url:../assets/shake.png";
+import logoIcon from "url:../assets/logo.png";
 
 type Restaurant = {
     info: {
@@ -242,7 +243,7 @@ const Body = () => {
                     />
                     <div className="h-7 w-0.5 bg-gray-200 mx-2"></div>
                     <button
-                     className="px-2 py-2 font-bold text-gray-800 text-sm"
+                     className="px-2 py-2 font-bold text-gray-900 text-sm"
                         onClick={() => {
                             // Filter the restaurant cards and update the UI
                             // searchText
@@ -275,7 +276,42 @@ const Body = () => {
                     );
                     })}
             </div>
-        </div>
+
+            {/* Footer */}
+            <div className="border-t w-full mt-4 border-gray-300"></div>
+              <div className="footer container flex flex-row py-10 px-8 max-w-7xl mx-auto justify-between items-start ">
+         
+                <div className="shrink-0 -mt-6 -pr-12">
+                        <img
+                         src={logoIcon}
+                         className="w-32 h-auto"
+                         alt="logo of sandburgs">
+                        </img>
+                </div>
+                    <div className="flex-col">
+                        <h4 className="text-gray-400 md:-ml-55 font-bold text-xs mb-4 tracking-widest">COMPANY</h4>
+                        <ul className="text-black md:-ml-55 space-y-2 text-sm">
+                            <li className="text-gray-900 font-normal cursor-pointer">About</li>
+                            <li className="text-gray-900 font-normal cursor-pointer">Features</li>
+                            <li className="text-gray-900 font-normal cursor-pointer">Works</li>
+                            <li className="text-gray-900 font-normal cursor-pointer">Career</li>
+                        </ul>
+                    </div>
+                    <div className="flex-col">
+                        <h4 className="text-gray-400 md:-ml-140 font-bold text-xs mb-4 tracking-widest">HELP</h4>
+                        <ul className="text-black font-medium space-y-2 md:-ml-140 text-sm">
+                            <li className="text-gray-900 font-normal cursor-pointer">Customer Support</li>
+                            <li className="text-gray-900 font-normal cursor-pointer">Delivery Details</li>
+                            <li className="text-gray-900 font-normal cursor-pointer">Terms & Conditions</li>
+                            <li className="text-gray-900 font-normal cursor-pointer">Privacy Policy</li>
+                        </ul>
+                    </div>
+                </div>
+                <div className="max-w-5xl mx-auto">
+                <div className="border-t w-full my-4 border-gray-300"></div>
+                <div className="text-gray-900 text-center text-xs pb-8">© 2026 An attempt at making a Swiggy Clone.</div>
+                </div>
+            </div>
     );
 };
 
