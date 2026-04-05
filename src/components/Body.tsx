@@ -23,6 +23,8 @@ import saladsIcon from "url:../assets/salads.png";
 import waffleIcon from "url:../assets/waffle.png";
 import shakeIcon from "url:../assets/shake.png";
 import logoIcon from "url:../assets/logo.png";
+// import { X, Facebook, Instagram } from "lucide-react";
+import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 
 type Restaurant = {
     info: {
@@ -277,41 +279,76 @@ const Body = () => {
                     })}
             </div>
 
-            {/* Footer */}
-            <div className="border-t w-full mt-4 border-gray-300"></div>
-              <div className="footer container flex flex-row py-10 px-8 max-w-7xl mx-auto justify-between items-start ">
-         
-                <div className="shrink-0 -mt-6 -pr-12">
-                        <img
-                         src={logoIcon}
-                         className="w-32 h-auto"
-                         alt="logo of sandburgs">
-                        </img>
-                </div>
-                    <div className="flex-col">
-                        <h4 className="text-gray-400 md:-ml-55 font-bold text-xs mb-4 tracking-widest">COMPANY</h4>
-                        <ul className="text-black md:-ml-55 space-y-2 text-sm">
-                            <li className="text-gray-900 font-normal cursor-pointer">About</li>
-                            <li className="text-gray-900 font-normal cursor-pointer">Features</li>
-                            <li className="text-gray-900 font-normal cursor-pointer">Works</li>
-                            <li className="text-gray-900 font-normal cursor-pointer">Career</li>
-                        </ul>
-                    </div>
-                    <div className="flex-col">
-                        <h4 className="text-gray-400 md:-ml-140 font-bold text-xs mb-4 tracking-widest">HELP</h4>
-                        <ul className="text-black font-medium space-y-2 md:-ml-140 text-sm">
-                            <li className="text-gray-900 font-normal cursor-pointer">Customer Support</li>
-                            <li className="text-gray-900 font-normal cursor-pointer">Delivery Details</li>
-                            <li className="text-gray-900 font-normal cursor-pointer">Terms & Conditions</li>
-                            <li className="text-gray-900 font-normal cursor-pointer">Privacy Policy</li>
-                        </ul>
-                    </div>
-                </div>
-                <div className="max-w-5xl mx-auto">
-                <div className="border-t w-full my-4 border-gray-300"></div>
-                <div className="text-gray-900 text-center text-xs pb-8">© 2026 An attempt at making a Swiggy Clone.</div>
-                </div>
+        {/* Footer Section */}
+            <footer className="w-full bg-white pt-10 border-t border-gray-200">
+            <div className="max-w-7xl mx-auto px-8">
+            <div className="flex flex-row justify-between items-start pb-10">
+      
+            <div className="flex flex-col gap-4 md:-mt-7 md:mx-18 -ml-10">
+            <img 
+            src={logoIcon} 
+            className="md:w-32 w-25 h-auto" 
+            alt="logo"
+            />
+        
+        <div className="flex gap-4 -mt-7 mx-7">
+           <div className="bg-slate-800 p-2 rounded-full text-white cursor-pointer hover:bg-slate-700">
+            <FaTwitter size={10} />
             </div>
+            <div className="bg-slate-800 p-2 rounded-full text-white cursor-pointer hover:bg-slate-700">
+            <FaFacebookF size={10} />
+            </div>
+            <div className="bg-slate-800 p-2 rounded-full text-white cursor-pointer hover:bg-slate-700">
+            <FaInstagram size={10} />
+            </div>
+           </div>
+        </div>
+
+        <div className="flex gap-120">
+        <div className="-mr-80">
+        <h4 className="text-gray-400 font-bold text-xs md:mb-4 md:-ml-155 tracking-widest -ml-20">COMPANY</h4>
+          <ul className="text-gray-900 space-y-2 text-sm md:-ml-155 -ml-18 mt-2.5 md:mt-0">
+            <li className="cursor-pointer">About</li>
+            <li className="cursor-pointer">Features</li>
+            <li className="cursor-pointer">Works</li>
+            <li className="cursor-pointer">Career</li>
+          </ul>
+        </div>
+
+        <div className="-mr-70 hidden md:block">
+          <h4 className="text-gray-400 font-bold text-xs md:mb-4 md:-ml-155 tracking-widest hidden md:block">HELP</h4>
+          <ul className="text-gray-900 space-y-2 text-sm -ml-155">
+            <li className="cursor-pointer">Customer Support</li>
+            <li className="cursor-pointer">Delivery Details</li>
+            <li className="cursor-pointer">Terms & Conditions</li>
+            <li className="cursor-pointer">Privacy Policy</li>
+          </ul>
+        </div>
+
+        <div className="-mr-60">
+        <h4 className="text-gray-400 font-bold text-xs md:mb-4 md:mr-40 md:-ml-155 tracking-widest hidden md:block">AVAILABLE in :</h4>
+          <ul className="text-gray-900 space-y-2 text-sm -ml-155 hidden md:block">
+            <li className="cursor-pointer">Delhi</li>
+            <li className="cursor-pointer">Gurgaon</li>
+            <li className="cursor-pointer">Pune</li>
+            <li className="cursor-pointer">Hyderabad</li>
+            <li className="cursor-pointer">Bangalore</li>
+            <li className="cursor-pointer">Mumbai</li>
+          </ul>
+        </div>
+
+        </div>
+        </div>
+
+        <div className="border-t border-gray-200 md:pt-8 md:pb-8 pt-4">
+        <p className="text-gray-500 text-center text-xs">
+         © 2026 An attempt at making a Swiggy Clone.
+        </p>
+        </div>
+
+        </div>
+        </footer>
+</div>    
     );
 };
 
