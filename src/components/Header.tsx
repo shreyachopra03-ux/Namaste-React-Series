@@ -6,7 +6,6 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
 
-
 const Header = () => {
   const [btnNameReact, setbtnNameReact] = useState('Login');
   // console.log('header rendered');
@@ -29,14 +28,16 @@ const Header = () => {
 
   return (
     <div className="py-3 m-3 md:py-0 rounded-lg flex justify-between bg-white shadow-sm md:m-2 h-25">
-      <div className="-ml-7 rounded-lg logo-container w-30 h-25">
+      <div className="flex items-center gap-2">
+        <div className="logo-container w-24 h-20 overflow-hidden flex items-center justify-center">
         <img
-          className="py-2 mt-1 m-5 pr-6 rounded-lg h-25 w-30" 
+          className="h-full w-auto object-contain" 
           src={LOGO_URL}
           alt='logoIcon'>
         </img>
       </div>
-      <span className="text-orange-500 mt-11 -ml-118 font-bold text-md">Sandburgs</span>
+      <span className="text-orange-500 font-bold text-md -ml-4">Sandburgs</span>
+      </div>
       <div className="-ml-8 flex items-center">
         <ul className="flex px-4">
           <li className="text-gray-800 cursor-pointer font-serif px-4 hover:scale-105 transition-all duration-300 ease-out text-[8.5px] md:text-[17px]">
