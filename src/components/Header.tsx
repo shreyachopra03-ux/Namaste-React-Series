@@ -28,33 +28,35 @@ const Header = () => {
   }, [btnNameReact]);
 
   return (
-    <div className="py-3 m-3 md:py-0 rounded-lg flex justify-between bg-white shadow-md md:m-2 h-[100px]">
-      <div className="-ml-7 rounded-lg logo-container w-30 h-[100px]">
+    <div className="py-3 m-3 md:py-0 rounded-lg flex justify-between bg-white shadow-sm md:m-2 h-25">
+      <div className="-ml-7 rounded-lg logo-container w-30 h-25">
         <img
-          className="py-2 mt-1 m-5 pr-6 rounded-lg h-[100px] w-[120px]" 
-          src={LOGO_URL}>
+          className="py-2 mt-1 m-5 pr-6 rounded-lg h-25 w-30" 
+          src={LOGO_URL}
+          alt='logoIcon'>
         </img>
       </div>
+      <span className="text-orange-500 mt-11 -ml-118 font-bold text-md">Sandburgs</span>
       <div className="-ml-8 flex items-center">
         <ul className="flex px-4">
-          <li className="text-gray-600 font-semibold cursor-pointer font-serif px-4 hover:scale-105 transition-all duration-300 ease-out text-[8.5px] md:text-[17px]">
+          <li className="text-gray-800 cursor-pointer font-serif px-4 hover:scale-105 transition-all duration-300 ease-out text-[8.5px] md:text-[17px]">
             <Link to="/">Home</Link>
           </li>
-          <li className="text-gray-600 font-semibold cursor-pointer hover:scale-105 transition-all duration-300 ease-out font-serif px-4 text-[8.5px] md:text-[17px]">
+          <li className="text-gray-800 cursor-pointer hover:scale-105 transition-all duration-300 ease-out font-serif px-4 text-[8.5px] md:text-[17px]">
             <Link to="/about">About Us</Link>
             </li>
-          <li className="text-[9px] md:text-[17px] cursor-pointer text-gray-600 font-semibold hover:scale-105 transition-all duration-300 ease-out px-4  font-serif">
+          <li className="text-[9px] md:text-[17px] cursor-pointer text-gray-800 hover:scale-105 transition-all duration-300 ease-out px-4  font-serif">
             <Link to="/cart">Cart</Link>
             <i className="fa-solid fa-cart-shopping text-gray-500 px-1"></i>
             <Link to="/cart">({cartItems.length})</Link>
           </li>
-          <li className="text-gray-600 cursor-pointer font-semibold hover:scale-105 transition-all duration-300 ease-out font-serif px-4 text-[8.5px] md:text-[17px]">
+          <li className="text-gray-800 cursor-pointer hover:scale-105 transition-all duration-300 ease-out font-serif px-4 text-[8.5px] md:text-[17px]">
             <Link to="/grocery">Grocery</Link></li>
-          <li className="text-gray-600 cursor-pointer font-semibold hover:scale-105 transition-all duration-300 ease-out px-4 font-serif text-[8.5px] md:text-[17px]">
+          <li className="text-gray-800 cursor-pointer hover:scale-105 transition-all duration-300 ease-out px-4 font-serif text-[8.5px] md:text-[17px]">
             <Link to="/contactUs">Contact</Link>
           </li>
           
-          <button className="login cursor-pointer text-gray-600 font-semibold hover:scale-105 flex transition-all duration-300 ease-out font-serif text-[8.5px] md:text-[17px] px-4"
+          <button className="login cursor-pointer text-gray-800 hover:scale-105 flex transition-all duration-300 ease-out font-serif text-[8.5px] md:text-[17px] px-4"
             onClick={() => {
               btnNameReact === "Login"
               ? setbtnNameReact('Logout')
