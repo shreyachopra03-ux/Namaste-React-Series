@@ -23,7 +23,6 @@ import saladsIcon from "url:../assets/salads.png";
 import waffleIcon from "url:../assets/waffle.png";
 import shakeIcon from "url:../assets/shake.png";
 import logoIcon from "url:../assets/logo.png";
-// import { X, Facebook, Instagram } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 
 type Restaurant = {
@@ -106,8 +105,34 @@ const Body = () => {
 
     return (
         <div className="body min-h-screen pb-50 md:pb-0 pt-2">
-            <div className="text-black font-bold pl-6 text-xl">
-                What's on your mind?
+            <div className="-mt-3.5 flex flex-col bg-[#fff9f2] w-screen h-105">
+                <div className="flex flex-col items-center mx-auto gap-2 mt-8">
+                <span className="font-semibold text-2xl md:text-5xl">Delicious Food</span>
+                <span className="font-semibold text-2xl md:text-5xl text-orange-600">Delivered to You</span>
+                <span className="text-gray-700 md:text-lg mt-2">Order from your favorite restaurants and get it delivered fresh at your doorstep in <br/><span className="md:text-lg flex items-center justify-center"> minutes</span></span>
+                </div>
+                <div className="mx-auto flex gap-20 mt-10">
+                {/* Restaurants Section */}
+                <div className="flex flex-col gap-2">
+                    <span className="text-orange-600 font-semibold text-2xl">500+</span>
+                    <span className="text-gray-700 font-normal text-base">Restaurants</span>
+                </div>
+
+                {/* Dishes Section */}
+                <div className="flex flex-col gap-2">
+                    <span className="text-orange-600 font-semibold text-2xl">10k+</span>
+                    <span className="text-gray-700 font-normal text-base">Dishes</span>
+                </div>
+
+                {/* Users Section */}
+                <div className="flex flex-col gap-2">
+                    <span className="text-orange-600 font-semibold text-2xl">50k</span>
+                    <span className="text-gray-700 font-normal text-base">Happy Users</span>
+                </div>
+                </div>
+            </div>
+            <div className="text-gray-800 font-semibold text-center pl-6 mt-5 text-2xl">
+                Browse By Category
                 <div className="flex gap-4 mt-4 overflow-x-auto no-scrollbar pb-4">
           
                      <div className="flex-col flex-none items-center w-28 flex cursor-pointer">    
