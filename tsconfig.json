@@ -9,8 +9,10 @@
     // See also https://aka.ms/tsconfig/module
     "module": "ESNext",
     "target": "ESNext",
-     "moduleResolution": "node",
+     "moduleResolution": "bundler",
     "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
     // "types": [],
     // For nodejs:
     "lib": ["ESNext", "DOM"],
