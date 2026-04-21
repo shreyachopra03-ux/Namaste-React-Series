@@ -1,4 +1,4 @@
-// This is how we write a 'named import'
+// This is how we write a 'named import'.
 import {LOGO_URL} from "../utils/constants";
 import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
