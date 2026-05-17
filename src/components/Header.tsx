@@ -27,19 +27,20 @@ const Header = () => {
   }, [btnNameReact]);
 
   return (
-    <div className="py-3 m-3 md:py-0 rounded-lg flex justify-between bg-white shadow-sm md:m-2 h-25">
-      <div className="flex items-center gap-2">
-        <div className="logo-container w-24 h-20 overflow-hidden flex items-center justify-center">
+    <div className="flex-col md:flex-row mt-2 md:mt-0 py-3 m-3 md:py-0 rounded-lg flex flex-wrap justify-between items-center bg-white shadow-sm md:m-2 h-auto md:h-25 mx-5 md:mx-0">
+      <div className="flex flex-col items-center md:flex-row md:gap-2">
+        <div className="w-20 h-16 overflow-hidden flex items-center justify-center">
         <img
-          className="h-full w-auto object-contain" 
+          className="h-full w-auto object-contain -mt-5 md:mt-0" 
           src={LOGO_URL}
           alt='logoIcon'>
         </img>
       </div>
-      <span className="text-orange-500 font-bold text-md -ml-4">Sandburgs</span>
+      <span className="text-orange-500 font-bold text-md md:text-xl md:-ml-4 -mt-5.5 md:mt-0">Sandburgs</span>
       </div>
-      <div className="-ml-8 flex items-center">
-        <ul className="flex px-4">
+
+      <div className="w-full md:w-auto flex justify-center items-center">
+        <ul className="flex flex-row mt-3 md:mt-0 md:px-4 overflow-x-auto whitespace-nowrap no-scrollbar">
           <li className="text-gray-800 cursor-pointer font-serif px-4 hover:scale-105 transition-all duration-300 ease-out text-[8.5px] md:text-[17px]">
             <Link to="/">Home</Link>
           </li>

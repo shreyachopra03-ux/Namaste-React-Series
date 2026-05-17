@@ -87,7 +87,6 @@ const Body = () => {
         fetchData();
     }, []);
 
-
      const onlineStatus = useOnlineStatus();
      if( onlineStatus === false ) 
         return (
