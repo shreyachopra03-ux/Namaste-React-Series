@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
- 
-type CartItem = string;
+
+type CartItem = any;
 
 export interface CartState {
     items: CartItem[];
@@ -10,7 +10,7 @@ export interface CartState {
 const initialState: CartState = {
     items: [],
 }
- 
+
 const cartSlice = createSlice({
     name: 'cart',
     initialState,
@@ -24,11 +24,30 @@ const cartSlice = createSlice({
         addItem: (state:any, action: PayloadAction<CartItem>) => {
             // REDUX TOOLKIT uses "Immer" BEHIND THE SCENES
             // WE HAVE TO MUTATE THE STATE
-            state.items.push(action.payload);
+            const newItem = action.payload;
+            const existingItem = state.items.find(
+                (cartItem: any) => cartItem?.card?.info?.id === newItem?.card?.info?.id
+            );
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                state.items.push({ ...newItem, quantity: 1 });
+            }
         },
         // removeItem and clearCart don’t need an action payload because they can complete their work using only the current state, without any extra data from outside.
-        removeItem: (state:any) => {
-            state.items.pop();
+        removeItem: (state:any, action: PayloadAction<CartItem>) => {
+            const id = action.payload?.card?.info?.id;
+            const existingItem = state.items.find(
+                (cartItem: any) => cartItem?.card?.info?.id === id
+            );
+            if (!existingItem) return;
+            if (existingItem.quantity > 1) {
+                existingItem.quantity -= 1;
+            } else {
+                state.items = state.items.filter(
+                    (cartItem: any) => cartItem?.card?.info?.id !== id
+                );
+            }
         },
         // originalState = {items: ["pizza"]}
         clearCart: (state:any) => {

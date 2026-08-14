@@ -50,7 +50,9 @@ const Header = () => {
           <li className="text-[9px] md:text-[17px] cursor-pointer text-gray-800 hover:scale-105 transition-all duration-300 ease-out px-4  font-serif">
             <Link to="/cart">Cart</Link>
             <i className="fa-solid fa-cart-shopping text-gray-500 px-1"></i>
-            <Link to="/cart">({cartItems.length})</Link>
+            <Link to="/cart">
+              ({cartItems.reduce((total: number, item: any) => total + (item?.quantity || 0), 0)})
+            </Link>
           </li>
           <li className="text-gray-800 cursor-pointer hover:scale-105 transition-all duration-300 ease-out font-serif px-4 text-[8.5px] md:text-[17px]">
             <Link to="/grocery">Grocery</Link></li>

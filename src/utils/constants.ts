@@ -3,6 +3,10 @@
 
 export const CDN_URL:string = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"
 
+// Smaller variant for thumbnails (cart/menu items render at ~96-128px, so a
+// 660px download was pure wasted bandwidth and made the cart feel laggy).
+export const CDN_URL_SMALL:string = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_200/"
+
 export const LOGO_URL:string = "https://media.istockphoto.com/id/1435983029/vector/food-delivery-logo-images.jpg?s=612x612&w=0&k=20&c=HXPxcjOxUiW4pMW1u9E0k2dJYQOU37a_0qZAy3so8fY="
 
 export const MENU_API:string = "https://foodfire.onrender.com/api/menu?page-type=REGULAR_MENU&complete-menu=true&lat=28.60090200875999&lng=77.08098202943802&&submitAction=ENTER&restaurantId="
