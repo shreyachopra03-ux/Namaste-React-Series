@@ -1,18 +1,18 @@
 # Namaste React 🚀
 
-**Sandburgs** — a Swiggy-inspired food delivery web app built while following the Namaste React course, and used as a playground for practicing modern React concepts, Redux Toolkit, routing, and testing.
+**Sandburgs** - a Swiggy-inspired food delivery web app built while following the Namaste React course, and used as a playground for practicing modern React concepts, Redux Toolkit, routing, and testing.
 
 ## Tech Stack
 
-- **React 19** + **React DOM** — UI library
-- **TypeScript** — type safety
-- **Parcel** — zero-config dev server & bundler (HMR, code splitting, tree shaking, image optimization)
-- **Babel** — JSX/TS transpilation
-- **React Router DOM** — client-side routing
-- **Redux Toolkit** + **React Redux** — global state management (cart)
-- **Tailwind CSS** — utility-first styling
-- **Jest** + **React Testing Library** — unit & integration testing
-- **lucide-react** / **react-icons** — icons
+- **React 19** + **React DOM** - UI library
+- **TypeScript** - type safety
+- **Parcel** - zero-config dev server & bundler (HMR, code splitting, tree shaking, image optimization)
+- **Babel** - JSX/TS transpilation
+- **React Router DOM** - client-side routing
+- **Redux Toolkit** + **React Redux** - global state management (cart)
+- **Tailwind CSS** - utility-first styling
+- **Jest** + **React Testing Library** - unit & integration testing
+- **lucide-react** / **react-icons** - icons
 
 ## Features
 
