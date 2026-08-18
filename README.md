@@ -1,96 +1,73 @@
-...
-# NAMASTE REACT 🚀
-It's a food web app named Sandburgs !
+# Namaste React 🚀
 
-...
-# Parcel
-- Dev Build
-- Local Server
-- HMR = Hot Module Replacement
-- File watching algorithm - written in C++
-- Caching - Faster builds
-- Image Optimisation
-- Minification
-- Bundling
-- Compressing files 
-- consistent hashing
-- code splitting
-- differential bundling - support older browsers as well 
-- diagnostic
-- error handling
-- HTTPs
-- tree shaking - removes unused code
-- different dev and prod bundles
+**Sandburgs** — a Swiggy-inspired food delivery web app built while following the Namaste React course, and used as a playground for practicing modern React concepts, Redux Toolkit, routing, and testing.
 
-...
-#  FOOD DELIVERY APP OVERVIEW
- * Header
- *   - Logo
- *   - Nav items
- * Body
- *    - Search
- *    - RestaurantContainer
- *    - RestaurantCard
- *         - Img,
- *         - name of restaurant, 
- *         - star rating,
- *         - cuisines , 
- *         - time of delivery
- * Footer
- *    - Copyright
- *    - links
- *    - address
- *    - contact info    
+## Tech Stack
 
- ...
- # Two Types of Export/Import
+- **React 19** + **React DOM** — UI library
+- **TypeScript** — type safety
+- **Parcel** — zero-config dev server & bundler (HMR, code splitting, tree shaking, image optimization)
+- **Babel** — JSX/TS transpilation
+- **React Router DOM** — client-side routing
+- **Redux Toolkit** + **React Redux** — global state management (cart)
+- **Tailwind CSS** — utility-first styling
+- **Jest** + **React Testing Library** — unit & integration testing
+- **lucide-react** / **react-icons** — icons
 
- - Default Export/Import
+## Features
 
- export default Component;
- import Component from "path";
+- Dynamic, config-driven restaurant listing fetched from an API
+- Search and category-based filtering of restaurants
+- Restaurant menu page with expandable/collapsible categories (accordion)
+- Add to cart / clear cart with Redux Toolkit (slices, actions, selectors)
+- Client-side routing with nested routes (`Outlet`) for a shared Header/Footer layout
+- Online/offline status detection via a custom hook
+- User Context for global user data (functional + class component consumers)
+- Lazy loading with `React.lazy` and `Suspense` for route-based code splitting
+- Class-based component with full lifecycle methods (mount/update/unmount)
+- Unit and integration tests with Jest + React Testing Library
 
- - Named Export/Import
+## Project Structure
 
-export const Component;
-import {Component} from "path";
+```
+src/
+├── components/          # All React components (Header, Body, Cart, RestaurantMenu, etc.)
+│   ├── __tests__/       # Jest test files
+│   └── mocks/           # Mock data used in tests
+├── slices/               # Redux Toolkit slices (e.g. cartSlice)
+├── utils/                # Custom hooks, constants, Redux store, context, types
+├── assets/               # Static assets (images, icons)
+├── App.tsx               # Root component
+└── index.css             # Tailwind entry / global styles
+```
 
-...
-# React Hooks
-(Normal JS utility functions)
-Superpowerful state variables in react
-- useCase() - 
-- useEffect() - 
+## Getting Started
 
-...
-# 2 types of routing in web apps 
-- Client Side Routing
-- Server Side Routing
+Install dependencies:
 
-...
-# Redux Toolkit
-- Install @reduxjs/toolkit and react-redux
-- Build our store
-- Connect our store to our app
-- Slice (cartSlice)
-- dispatch(action)
-- Selector
+```bash
+npm install
+```
 
-... 
-# Types of testing (developer)
-- Unit Testing
-- Integration Testing
-- End to End Testing - e2e testing
+Start the dev server (Parcel):
 
-...
-# Setting up Testing in our app
-- Install React Testing Library
-- Installed jest
-- Installed Babel dependencies
-- Configure Babel by creating "babel.config.js" file in root directory
-- Configure Parcel config  file (.parcelrc) to disbale default babel transpilation
-- Jest configuration -> npx jest --init
-- Install jsdom library
-- Install @babel/preset-react -> to make JSX work in test cases
-- Include @babel/preset-react inside my babel config
-- Install npm i -D @testing-library/jest-dom
+```bash
+npm start
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+Run tests:
+
+```bash
+npm test          # run once
+npm run watch-test  # re-run on file changes
+```
+
+## Notes
+
+Personal learning notes from this course (React fundamentals, hooks, Redux Toolkit, routing, testing, Tailwind, etc.) are documented in [src/REVISION_NOTES.md](src/REVISION_NOTES.md).
